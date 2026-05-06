@@ -179,18 +179,21 @@ p  { color: var(--text-muted); }
 
 .site-nav { display: flex; align-items: center; gap: 32px; }
 .site-nav ul { display: flex; gap: 30px; }
-.site-nav a {
+.site-nav a:not(.btn) {
     color: var(--primary);
     font-weight: 500;
     font-size: 0.95rem;
     position: relative;
     padding: 6px 0;
 }
-.site-nav a:hover { color: var(--accent); }
+.site-nav a:not(.btn):hover { color: var(--accent); }
 .site-nav a.active { color: var(--accent); }
-.site-nav a.active::after {
+.site-nav a.active:not(.btn)::after {
     content: ""; position: absolute; left: 0; right: 0; bottom: -2px;
     height: 2px; background: var(--accent); border-radius: 2px;
+}
+.btn-primary.nav-cta:hover {
+    color: #fff;
 }
 
 /* Mobile nav toggle */
